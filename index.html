@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heavy Civil Operational Strategy Engine</title>
+    <!-- Tailwind CSS Engine -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style>
+        .custom-scroll::-webkit-scrollbar { width: 6px; height: 6px; }
+        .custom-scroll::-webkit-scrollbar-track { background: #0f172a; }
+        .custom-scroll::-webkit-scrollbar-thumb { background: #334155; border-radius: 4px; }
+    </style>
+</head>
+<body class="bg-slate-950 text-slate-100 font-sans min-h-screen selection:bg-amber-500 selection:text-slate-950 antialiased">
+
+    <div class="max-w-7xl mx-auto px-4 py-8">
+        
+        <!-- Header Navigation Bar -->
+        <header class="border-b border-slate-850 pb-6 mb-8 flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+            <div>
+                <span class="text-xs font-bold tracking-widest text-amber-500 uppercase">Onboarding Framework</span>
+                <h1 class="text-3xl font-black text-white mt-1 tracking-tight">Heavy Civil Strategy & Bidding Engine</h1>
+                <p class="text-slate-400 text-xs mt-1">Predictive Operational Matrix Modeling & Resource Sufficiency Diagnostics</p>
+            </div>
+            <div class="bg-slate-900/60 border border-slate-800 rounded-xl p-3 px-5 flex items-center gap-4 shadow-md">
+                <div class="w-3 h-3 rounded-full bg-amber-500 animate-pulse"></div>
+                <div>
+                    <div class="text-[10px] text-slate-500 uppercase font-bold tracking-wider">Engine Calibration</div>
+                    <div class="text-sm font-bold text-slate-200">Google Sheets Sync Active</div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Form Grid Split -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+            
+            <!-- Left Inputs System (7 Columns Wide) -->
+            <div class="lg:col-span-7 space-y-6">
+                
+                <!-- Baseline General Company Inputs -->
+                <div class="bg-slate-900 border border-slate-800/80 rounded-2xl p-6 shadow-xl">
+                    <h2 class="text-base font-bold text-white mb-4 flex items-center gap-2">
+                        <span class="text-amber-500">⚙️</span> General Corporate Operational Inputs
+                    </h2>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                        <div>
+                            <label class="block text-[11px] font-bold text-slate-400 uppercase tracking-wider mb-1.5">Bidding Start Date</label>
+                            <input type="date" id="startDate" value="2026-02-11" class="w-full bg-slate-950 border border-slate-800 rounded-xl py-2 px-3 text-sm text-slate-200 focus:outline-none focus:border-amber-500">
+                        </div>
+                        <div>
+                            <label class="block text-[11px] font-bold text-slate-400 uppercase tracking-wider mb-1.5">Last Year Revenue</label>
+                            <input type="number" id="revLastYear" value="2000000" class="w-full bg-slate-950 border border-slate-800 rounded-xl py-2 px-3 text-sm text-slate-200 focus:outline-none focus:border-amber-500">
+                        </div>
+                        <div>
+                            <label class="block text-[11px] font-bold text-slate-400 uppercase tracking-wider mb-1.5">Projected Revenue Goal</label>
+                            <input type="number" id="revProjected" value="2250000" class="w-full bg-slate-950 border border-slate-800 rounded-xl py-2 px-3 text-sm text-slate-200 focus:outline-none focus:border-amber-500">
+                        </div>
+                        <div>
+                            <label class="block text-[11px] font-bold text-slate-400 uppercase tracking-wider mb-1.5">Avg Job Size Sweet-Spot</label>
+                            <input type="number" id="avgJobSize" value="750000" class="w-full bg-slate-950 border border-slate-800 rounded-xl py-2 px-3 text-sm text-slate-200 focus:outline-none focus:border-amber-500">
+                        </div>
+                        <div>
+                            <label class="block text-[11px] font-bold text-slate-400 uppercase tracking-wider mb-1.5">Heavy Civil % (Over $500K)</label>
+                            <input type="number" id="hcPercent" value="100" class="w-full bg-slate-950 border border-slate-800 rounded-xl py-2 px-3 text-sm text-slate-200 focus:outline-none focus:border-amber-500">
+                        </div>
+                        <div>
+                            <label class="block text-[11px] font-bold text-slate-400 uppercase tracking-wider mb-1.5">Active Estimator Count</label>
+                            <input type="number" id="estimators" value="1" min="1" class="w-full bg-slate-950 border border-slate-800 rounded-xl py-2 px-3 text-sm text-slate-200 focus:outline-none focus:border-amber-500">
+                        </div>
+                        <div class="md:col-span-3">
+                            <label class="block text-[11px] font-bold text-slate-400 uppercase tracking-wider mb-1.5">Single-Project Bonding Capacity Limit</label>
+                            <input type="number" id="bondingLimit" value="1500000" class="w-full bg-slate-950 border border-slate-800 rounded-xl py-2 px-3 text-sm text-slate-200 focus:outline-none focus:border-amber-500">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pillar 1: Advanced Geography & Substitution Engine -->
+                <div class="bg-slate-900 border border-slate-800/80 rounded-2xl p-6 shadow-xl">
+                    <h2 class="text-base font-bold text-white mb-2 flex items-center gap-2">
+                        <span class="text-amber-500">📍</span> Pillar 1: Footprint & Neighboring Matrix Substitution
+                    </h2>
+                    <p class="text-xs text-slate-400 mb-4">Select base operational territory. Engine dynamically looks up geographic values, loops neighboring markets, and sub-models aggregate capacity shifts.</p>
+                    
+                    <div class="relative mb-4">
+                        <label class="block text-[11px] font-bold text-slate-400 uppercase tracking-wider mb-1.5">Search Registry Markets</label>
+                        <input type="text" id="geoSearch" placeholder="Type primary market name (e.g., Ocala, Phoenix, Winchester)..." class="w-full bg-slate-950 border border-slate-800 rounded-xl py-2.5 px-4 text-sm text-slate-200 placeholder-slate-600 focus:outline-none focus:border-amber-500">
+                        <div id="geoDropdown" class="hidden absolute left-0 right-0 mt-2 max-h-52 overflow-y-auto bg-slate-950 border border-slate-800 rounded-xl z-50 shadow-2xl custom-scroll"></div>
+                    </div>
+
+                    <!-- Selected Target Area Metrics Panel -->
+                    <div id="geoMetricsBlock" class="p-4 bg-slate-950 rounded-xl border border-slate-850 space-y-4 hidden">
+                        <div class="flex justify-between items-center border-b border-slate-850 pb-2.5">
+                            <div>
+                                <span class="text-xs font-bold text-slate-400 uppercase tracking-wider">Primary Base County</span>
+                                <h3 id="activeMarketName" class="text-sm font-black text-white mt-0.5">--</h3>
+                            </div>
+                            <div class="text-right">
+                                <span class="text-[10px] font-bold text-slate-500 uppercase tracking-wider">Base Score</span>
+                                <div id="activeMarketScore" class="text-xl font-black text-amber-500">0.0</div>
+                            </div>
+                        </div>
+
+                        <!-- Lever 2 Logic Output Frame -->
+                        <div id="neighborBlock" class="space-y-2">
+                            <span class="text-[10px] font-bold text-amber-500 uppercase tracking-widest block">Lever 2 Navigation: Neighboring Counties Matrix</span>
+                            <div id="neighborListContainer" class="space-y-2">
+                                <!-- Populated on selection loop -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pillar 2 & 3: Direct Core Numeric Parameters inputs -->
+                <div class="bg-slate-900 border border-slate-800/80 rounded-2xl p-6 shadow-xl grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <h2 class="text-sm font-bold text-white mb-1.5 flex items-center gap-2">
+                            <span class="text-amber-500">⚔️</span> Pillar 2: Competitor Density
+                        </h2>
+                        <p class="text-[11px] text-slate-400 mb-3">Input average raw number of active bidders competing per board submission.</p>
+                        <div class="flex items-center gap-3">
+                            <input type="number" id="inputCompetitors" value="15" min="0" class="w-24 bg-slate-950 border border-slate-800 rounded-xl py-2 px-3 text-sm text-center font-bold text-amber-500 focus:outline-none focus:border-amber-500">
+                            <div class="text-xs text-slate-400">
+                                Resultant Score Matrix: <span id="lblCompScore" class="font-bold text-slate-200">--</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h2 class="text-sm font-bold text-white mb-1.5 flex items-center gap-2">
+                            <span class="text-amber-500">🤝</span> Pillar 3: Relationships (Scale 1-10)
+                        </h2>
+                        <p class="text-[11px] text-slate-400 mb-3">Input relationship pipeline status matrix value directly from 1 to 10.</p>
+                        <div class="flex items-center gap-3">
+                            <input type="number" id="inputRelationships" value="3" min="0" max="10" step="0.1" class="w-24 bg-slate-950 border border-slate-800 rounded-xl py-2 px-3 text-sm text-center font-bold text-amber-500 focus:outline-none focus:border-amber-500">
+                            <div class="text-xs text-slate-400">
+                                Calibration Factor: <span id="lblRelScore" class="font-bold text-slate-200">3.0 / 10</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pillar 4: Capacity Matrix Profiles & Assets Checklist -->
+                <div class="bg-slate-900 border border-slate-800/80 rounded-2xl p-6 shadow-xl grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <h2 class="text-sm font-bold text-white mb-1.5 flex items-center gap-2">
+                            <span class="text-amber-500">📈</span> Pillar 4A: History Scale Index
+                        </h2>
+                        <p class="text-[11px] text-slate-400 mb-3">Input total number of successfully completed projects valued strictly over $750K.</p>
+                        <div class="flex items-center gap-3">
+                            <input type="number" id="inputHistory" value="9" min="0" class="w-24 bg-slate-950 border border-slate-800 rounded-xl py-2 px-3 text-sm text-center font-bold text-amber-500 focus:outline-none focus:border-amber-500">
+                            <div class="text-xs text-slate-400">
+                                Calculated Weight: <span id="lblHistScore" class="font-bold text-slate-200">--</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h2 class="text-sm font-bold text-white mb-1.5 flex items-center gap-2">
+                            <span class="text-amber-500">🚜</span> Asset Configuration Inventory
+                        </h2>
+                        <p class="text-[11px] text-slate-400 mb-3">Select active deployment iron assets physically ready in the contractor yard.</p>
+                        <div class="grid grid-cols-2 gap-2 text-xs">
+                            <label class="flex items-center gap-2 text-slate-300 cursor-pointer"><input type="checkbox" id="assetExcavator" checked class="accent-amber-500"> Large Excavator</label>
+                            <label class="flex items-center gap-2 text-slate-300 cursor-pointer"><input type="checkbox" id="assetDozer" checked class="accent-amber-500"> Heavy Dozer</label>
+                            <label class="flex items-center gap-2 text-slate-300 cursor-pointer"><input type="checkbox" id="assetCompactor" checked class="accent-amber-500"> Compactor Spread</label>
+                            <label class="flex items-center gap-2 text-slate-300 cursor-pointer"><input type="checkbox" id="assetTrencher" class="accent-amber-500"> Utility Trencher</label>
+                            <label class="flex items-center gap-2 text-slate-300 cursor-pointer"><input type="checkbox" id="assetGrader" class="accent-amber-500"> Motor Grader GPS</label>
+                            <label class="flex items-center gap-2 text-slate-300 cursor-pointer"><input type="checkbox" id="assetPaver" class="accent-amber-500"> Asphalt Paver</label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pillar 4B: Scope Field Configuration Checklist Mapping Matrix -->
+                <div class="bg-slate-900 border border-slate-800/80 rounded-2xl p-6 shadow-xl">
+                    <h2 class="text-base font-bold text-white mb-2 flex items-center gap-2">
+                        <span class="text-amber-500">📝</span> Pillar 4B: Self-Perform Scope Targeted Portfolio
+                    </h2>
+                    <p class="text-xs text-slate-400 mb-3">Check all targeted engineering scope disciplines the contractor intends to perform.</p>
+                    <div class="grid grid-cols-2 md:grid-cols-3 gap-3 text-xs">
+                        <label class="flex items-center gap-2.5 p-2.5 bg-slate-950 rounded-xl border border-slate-850 cursor-pointer text-slate-300"><input type="checkbox" value="Grading & Storm" checked class="scope-item accent-amber-500"> Grading & Stormwater</label>
+                        <label class="flex items-center gap-2.5 p-2.5 bg-slate-950 rounded-xl border border-slate-850 cursor-pointer text-slate-300"><input type="checkbox" value="Utilities" class="scope-item accent-amber-500"> Utilities & Open Main Trench</label>
+                        <label class="flex items-center gap-2.5 p-2.5 bg-slate-950 rounded-xl border border-slate-850 cursor-pointer text-slate-300"><input type="checkbox" value="Exterior Concrete" checked class="scope-item accent-amber-500"> Exterior Structural Concrete</label>
+                        <label class="flex items-center gap-2.5 p-2.5 bg-slate-950 rounded-xl border border-slate-850 cursor-pointer text-slate-300"><input type="checkbox" value="Lift Station and Forcemain" checked class="scope-item accent-amber-500"> Lift Station / Forcemains</label>
+                        <label class="flex items-center gap-2.5 p-2.5 bg-slate-950 rounded-xl border border-slate-850 cursor-pointer text-slate-300"><input type="checkbox" value="Misc. Civil" checked class="scope-item accent-amber-500"> Misc Civil (Boring, Traffic)</label>
+                        <label class="flex items-center gap-2.5 p-2.5 bg-slate-950 rounded-xl border border-slate-850 cursor-pointer text-slate-300"><input type="checkbox" value="Demolition and ESC" class="scope-item accent-amber-500"> Demolition & ESC</label>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Right Output Dashboard Results Framework (5 Columns Wide) -->
+            <div class="lg:col-span-5 space-y-6">
+                
+                <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6 shadow-xl sticky top-6 space-y-6">
+                    <h2 class="text-lg font-black text-white tracking-tight border-b border-slate-800 pb-3">🎯 Strategic Performance Diagnosis</h2>
+                    
+                    <!-- HIGH-IMPACT CALCULATION RESULT BOX -->
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="bg-slate-950 border border-slate-800/80 rounded-xl p-4 text-center">
+                            <span class="text-[10px] font-bold text-slate-500 uppercase tracking-wider block">Calculated Win Rate</span>
+                            <div id="valWinRate" class="text-4xl font-black text-amber-500 tracking-tight my-1">--</div>
+                            <span id="valTier" class="text-[9px] font-bold text-slate-400 block uppercase tracking-wide">--</span>
+                        </div>
+                        <div class="bg-slate-950 border border-slate-800/80 rounded-xl p-4 text-center">
+                            <span class="text-[10px] font-bold text-slate-500 uppercase tracking-wider block">12-Mo Expected Wins</span>
+                            <div id="valExpectedWins" class="text-4xl font-black text-white tracking-tight my-1">--</div>
+                            <span id="valExpectedRev" class="text-[9px] font-bold text-emerald-500 block font-mono">--</span>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-2 gap-4 text-xs bg-slate-950 border border-slate-800/80 rounded-xl p-4">
+                        <div>
+                            <span class="text-slate-500 block text-[10px] uppercase font-bold">Months to First Job</span>
+                            <span id="valMonthsToFirst" class="font-bold text-slate-200 font-mono text-sm">--</span>
+                        </div>
+                        <div>
+                            <span class="text-slate-500 block text-[10px] uppercase font-bold">Targeted Market Radius</span>
+                            <span id="valTargetArea" class="font-bold text-slate-200 text-sm truncate block">--</span>
+                        </div>
+                    </div>
+
+                    <!-- Core Mathematical Formula Coefficient Tracker -->
+                    <div class="space-y-2 bg-slate-950 border border-slate-850 p-4 rounded-xl text-xs">
+                        <div class="text-[10px] uppercase font-bold tracking-widest text-slate-500 mb-2">Aggregated Score System ($s$) Coefficients</div>
+                        <div class="flex justify-between text-slate-400"><span>Geography Score (40%):</span> <span id="cfGeo" class="font-mono text-slate-300">--</span></div>
+                        <div class="flex justify-between text-slate-400"><span>Relationship Index (40%):</span> <span id="cfRel" class="font-mono text-slate-300">--</span></div>
+                        <div class="flex justify-between text-slate-400"><span>Competition Factor (7%):</span> <span id="cfComp" class="font-mono text-slate-300">--</span></div>
+                        <div class="flex justify-between text-slate-400"><span>Scale Multiplier (7%):</span> <span id="cfHist" class="font-mono text-slate-300">--</span></div>
+                        <div class="flex justify-between text-slate-400"><span>Scope Multiplicity (6%):</span> <span id="cfScope" class="font-mono text-slate-300">--</span></div>
+                        <div class="border-t border-slate-800 pt-2 flex justify-between font-bold text-sm text-white">
+                            <span>System Index Total:</span> <span id="cfTotal" class="font-mono text-amber-500">--</span>
+                        </div>
+                    </div>
+
+                    <!-- Textual Narrative Output Strategies -->
+                    <div class="space-y-4">
+                        <div>
+                            <span class="text-[10px] font-bold text-amber-500 uppercase tracking-wider block mb-1">📌 Relationship Strategy Blueprint</span>
+                            <p id="stratRelationshipText" class="text-xs text-slate-400 leading-relaxed bg-slate-950 p-3 rounded-xl border border-slate-850">Select parameters to compile structural recommendation texts.</p>
+                        </div>
+                        <div>
+                            <span class="text-[10px] font-bold text-amber-500 uppercase tracking-wider block mb-1">📌 Area Capacity Strategy Blueprint</span>
+                            <p id="stratAreaText" class="text-xs text-slate-400 leading-relaxed bg-slate-950 p-3 rounded-xl border border-slate-850">Select primary market registry targeting line.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+        <!-- LOWER SECTION: DYNAMIC 12-MONTH HORIZON BIDDING MATRIX TABLE -->
+        <section class="mt-8 bg-slate-900 border border-slate-800 rounded-2xl p-6 shadow-xl overflow-hidden">
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-center border-b border-slate-800 pb-4 mb-4 gap-2">
+                <div>
+                    <h2 class="text-lg font-black text-white tracking-tight">📊 12-Month Bidding Plan Horizon Matrix</h2>
+                    <p class="text-xs text-slate-400 mt-0.5">Dynamic monthly workload distributions based on structural relationship scaling algorithms.</p>
+                </div>
+                <div id="capacityOverageBox" class="text-xs space-y-1 text-right max-w-xl">
+                    <!-- Warnings output dynamically inline here -->
+                </div>
+            </div>
+            
+            <div class="overflow-x-auto custom-scroll border border-slate-850 rounded-xl bg-slate-950">
+                <table class="w-full text-left text-xs whitespace-nowrap" id="biddingPlanTable">
+                    <!-- Generated via JS processing Loop -->
+                </table>
+            </div>
+        </section>
+
+        <!-- SUB-MODULE: DYNAMIC PROJECT TYPE TARGETING CRITERIA AND SUFFICIENCY MAPPING MATRIX -->
+        <section class="mt-8 bg-slate-900 border border-slate-800 rounded-2xl p-6 shadow-xl">
+            <div class="mb-4">
+                <h2 class="text-lg font-black text-white tracking-tight">🎯 Targeted Classification & Equipment Sufficiency Matrix</h2>
+                <p class="text-xs text-slate-400 mt-0.5">Asset-to-scope cross-validation tracking module determining target vs avoid strategic alignment.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4" id="projectSufficiencyMatrixContainer">
+                <!-- Generated dynamically via asset-to-scope lookup arrays -->
+            </div>
+        </section>
+
+    </div>
+
+    <!-- Complete System Script Logic Processing Engine -->
+    <script>
+        // High-Density Primary Registry Data Payload Object Array
+        const metroRegistry = [
+            { id: 1, name: "Idaho Falls, ID", per1k: 40.7, neighbors: "None" },
+            { id: 2, name: "Punta Gorda, FL", per1k: 35.9, neighbors: "Cape Coral-Fort Myers, FL; North Port-Bradenton-Sarasota, FL" },
+            { id: 5, name: "Ocala, FL", per1k: 33.7, neighbors: "Homosassa Springs, FL; Lakeland-Winter Haven, FL; Gainesville, FL" },
+            { id: 6, name: "Cape Coral-Fort Myers, FL", per1k: 33.1, neighbors: "Punta Gorda, FL; North Port-Bradenton-Sarasota, FL" },
+            { id: 11, name: "North Port-Bradenton-Sarasota, FL", per1k: 28.9, neighbors: "Cape Coral-Fort Myers, FL; Punta Gorda, FL; Tampa-St. Petersburg-Clearwater, FL" },
+            { id: 14, name: "Lakeland-Winter Haven, FL", per1k: 28.5, neighbors: "Tampa-St. Petersburg-Clearwater, FL; Orlando-Kissimmee-Sanford, FL; Ocala, FL" },
+            { id: 18, name: "Homosassa Springs, FL", per1k: 27.6, neighbors: "Ocala, FL; Tampa-St. Petersburg-Clearwater, FL" },
+            { id: 33, name: "Phoenix-Mesa-Chandler, AZ", per1k: 21.4, neighbors: "Prescott Valley-Prescott, AZ; Tucson, AZ; Lake Havasu City-Kingman, AZ" },
+            { id: 41, name: "Orlando-Kissimmee-Sanford, FL", per1k: 20.2, neighbors: "Lakeland-Winter Haven, FL; Deltona-Daytona Beach-Ormond Beach, FL" },
+            { id: 63, name: "Winchester, VA-WV", per1k: 16.9, neighbors: "Harrisonburg, VA; Hagerstown-Martinsburg, MD-WV" },
+            { id: 73, name: "Prescott Valley-Prescott, AZ", per1k: 15.8, neighbors: "Phoenix-Mesa-Chandler, AZ; Lake Havasu City-Kingman, AZ" },
+            { id: 110, name: "Tampa-St. Petersburg-Clearwater, FL", per1k: 13.4, neighbors: "Lakeland-Winter Haven, FL; North Port-Bradenton-Sarasota, FL" },
+            { id: 117, name: "Gainesville, FL", per1k: 12.6, neighbors: "Ocala, FL" },
+            { id: 138, name: "Tucson, AZ", per1k: 10.7, neighbors: "Phoenix-Mesa-Chandler, AZ" },
+            { id: 362, name: "Decatur, IL", per1k: 1.2, neighbors: "Springfield, IL; Champaign-Urbana, IL; Bloomington, IL" }
+        ];
+
+        // Classification Static Profile Logic Arrays
+        const categoriesMapping = [
+            { name: "Commercial – Light (≤ $600K)", ratio: 0.35, channel: "private", requiredAsset: "assetExcavator", baseJPIFraction: 0.25 },
+            { name: "Commercial – Large ($600K – $20M)", ratio: 0.15, channel: "private", requiredAsset: "assetGrader", baseJPIFraction: 0.05 },
+            { name: "Institutional – Small ($500K – $1.5M)", ratio: 0.00, channel: "private", requiredAsset: "assetExcavator", baseJPIFraction: 0.02 },
+            { name: "Institutional – Large ($1.5M – $20M)", ratio: 0.30, channel: "private", requiredAsset: "assetGrader", baseJPIFraction: 0.01 },
+            { name: "Residential – Small (≤ $500K)", ratio: 0.20, channel: "private", requiredAsset: "assetDozer", baseJPIFraction: 0.08 },
+            { name: "Residential – Medium ($500K – $10M, up to ~100 units)", ratio: 0.10, channel: "private", requiredAsset: "assetCompactor", baseJPIFraction: 0.08 },
+            { name: "Residential – Community ($10M – $20M, 100+ units)", ratio: 0.00, channel: "private", requiredAsset: "assetGrader", baseJPIFraction: 0.02 },
+            { name: "Municipal Utility – Residential Street ($250K – $500K)", ratio: 0.00, channel: "public", requiredAsset: "assetTrencher", baseJPIFraction: 0.25 },
+            { name: "Municipal Utility – Collector ($500K – $3M)", ratio: 0.00, channel: "public", requiredAsset: "assetTrencher", baseJPIFraction: 0.08 },
+            { name: "Municipal Utility – Very Large Collector ($3M – $20M)", ratio: 0.00, channel: "public", requiredAsset: "assetExcavator", baseJPIFraction: 0.03 },
+            { name: "Public Grading & Stormwater – Medium (≤ $2M)", ratio: 0.00, channel: "public", requiredAsset: "assetDozer", baseJPIFraction: 0.06 },
+            { name: "Public Grading & Stormwater – Large ($2M – $20M)", ratio: 0.00, channel: "public", requiredAsset: "assetGrader", baseJPIFraction: 0.02 },
+            { name: "DOT ($2M – $20M+, highways, interchanges, bridges)", ratio: 0.00, channel: "public", requiredAsset: "assetPaver", baseJPIFraction: 0.05 }
+        ];
+
+        // Core Operational Global Variable Registry State
+        let activeMarketLine = null;
+        let selectedNeighborNames = [];
+
+        // UI Document Element Selectors
+        const searchInput = document.getElementById('geoSearch');
+        const searchDropdown = document.getElementById('geoDropdown');
+        const metricsBlock = document.getElementById('geoMetricsBlock');
+
+        // Initial Dropdown Loader Function Execution
+        function parseGeoDropdown(filter = "") {
+            searchDropdown.innerHTML = "";
+            const targets = metroRegistry.filter(m => m.name.toLowerCase().includes(filter.toLowerCase()));
+            
+            if(targets.length === 0) {
+                searchDropdown.innerHTML = `<div class="p-3 text-xs text-slate-600 italic">No structural data matching query found</div>`;
+                return;
+            }
+            targets.forEach(m => {
+                const el = document.createElement('div');
+                el.className = "p-3 px-4 text-xs font-medium text-slate-300 hover:bg-slate-900 hover:text-amber-500 cursor-pointer border-b border-slate-900/40 transition-colors";
+                el.textContent = `${m.name} [2024 Index Score: ${m.per1k}]`;
+                el.addEventListener('click', () => triggerMarketSelection(m));
+                searchDropdown.appendChild(el);
+            });
+        }
+
+        function triggerMarketSelection(market) {
+            activeMarketLine = market;
+            searchInput.value = market.name;
+            searchDropdown.classList.add('hidden');
+            selectedNeighborNames = [];
+
+            document.getElementById('activeMarketName').textContent = market.name;
+            document.getElementById('activeMarketScore').textContent = market.per1k;
+            metricsBlock.classList.remove('hidden');
+
+            renderNeighboringControls(market);
+            executeCalculationsPipeline();
+        }
+
+        function renderNeighboringControls(market) {
+            const container = document.getElementById('neighborListContainer');
+            container.innerHTML = "";
+            
+            if(!market.neighbors || market.neighbors === "None") {
+                container.innerHTML = `<div class="text-[11px] text-slate-600 italic">No contiguous high-density neighboring counties configured</div>`;
+                return;
+            }
+
+            const arr = market.neighbors.split(';').map(n => n.trim());
+            arr.forEach(name => {
+                const lookupObj = metroRegistry.find(m => m.name.toLowerCase() === name.toLowerCase());
+                const neighborScore = lookupObj ? lookupObj.per1k : 15.0; // Fallback neutral value
+
+                const flexRow = document.createElement('div');
+                flexRow.className = "flex items-center justify-between p-2.5 bg-slate-950 border border-slate-850 rounded-xl text-xs";
+                
+                flexRow.innerHTML = `
+                    <div>
+                        <span class="font-bold text-slate-300 block">${name}</span>
+                        <span class="text-[10px] text-slate-500 block font-mono">Local Baseline Index: ${neighborScore}</span>
+                    </div>
+                    <label class="flex items-center gap-2 text-[11px] font-semibold text-slate-400 cursor-pointer">
+                        <input type="checkbox" data-county="${name}" data-score="${neighborScore}" class="neighbor-toggle accent-amber-500"> Open here
+                    </label>
+                `;
+                container.appendChild(flexRow);
+            });
+
+            // Re-bind listeners down tree
+            document.querySelectorAll('.neighbor-toggle').forEach(chk => {
+                chk.addEventListener('change', () => {
+                    selectedNeighborNames = [];
+                    document.querySelectorAll('.neighbor-toggle:checked').forEach(c => {
+                        selectedNeighborNames.push(c.getAttribute('data-county'));
+                    });
+                    executeCalculationsPipeline();
+                });
+            });
+        }
+
+        // Framework Registry Listener Initializers
+        searchInput.addEventListener('focus', () => { parseGeoDropdown(searchInput.value); searchDropdown.classList.remove('hidden'); });
+        searchInput.addEventListener('input', (e) => parseGeoDropdown(e.target.value));
+        document.addEventListener('click', (e) => { if(!searchInput.contains(e.target) && !searchDropdown.contains(e.target)) searchDropdown.classList.add('hidden'); });
+
+        // Add Change Event Hooks to remaining numeric configuration arrays
+        ['startDate', 'revLastYear', 'revProjected', 'avgJobSize', 'hcPercent', 'estimators', 'bondingLimit', 'inputCompetitors', 'inputRelationships', 'inputHistory']
+        .forEach(id => document.getElementById(id).addEventListener('input', executeCalculationsPipeline));
+
+        document.querySelectorAll('.scope-item, input[type="checkbox"]').forEach(el => el.addEventListener('change', executeCalculationsPipeline));
+
+        // Structural Analytical Engine Pipelines Core Math Processing
+        function executeCalculationsPipeline() {
+            // Set defaults if no market explicitly assigned yet
+            if(!activeMarketLine) {
+                const defaultM = metroRegistry.find(m => m.id === 5); // Ocala Base Default configuration match
+                if (defaultM) triggerMarketSelection(defaultM);
+                return;
+            }
+
+            // --- Leverage 2 Engine Metrics Substitution Calculations ---
+            let activePer1k = activeMarketLine.per1k;
+            let targetAreaString = activeMarketLine.name;
+
+            if(selectedNeighborNames.length > 0) {
+                let cumulativeScore = activeMarketLine.per1k;
+                let validCount = 1;
+
+                selectedNeighborNames.forEach(nName => {
+                    const foundObj = metroRegistry.find(m => m.name.toLowerCase() === nName.toLowerCase());
+                    if(foundObj) {
+                        cumulativeScore += foundObj.per1k;
+                        validCount++;
+                    }
+                });
+                activePer1k = cumulativeScore / validCount;
+                targetAreaString = `${activeMarketLine.name} (+ Blended Neighbors Matched)`;
+            }
+
+            // Pillar 1 Numeric Conversion Scoring Matrix
+            let areaScore10 = 2.0;
+            if (activePer1k >= 25) areaScore10 = 10.0;
+            else if (activePer1k >= 20) areaScore10 = 8.0;
+            else if (activePer1k >= 15) areaScore10 = 6.0;
+            else if (activePer1k >= 5)  areaScore10 = 4.0;
+
+            // Pillar 2 Competitors Conversion Scoring Matrix
+            const rawCompetitors = parseInt(document.getElementById('inputCompetitors').value) || 0;
+            let compScore = 4.0;
+            if (rawCompetitors <= 3) compScore = 10.0;
+            else if (rawCompetitors <= 5) compScore = 8.0;
+            else if (rawCompetitors <= 7) compScore = 6.0;
+            document.getElementById('lblCompScore').textContent = `${compScore.toFixed(0)} / 10 Matrix`;
+
+            // Pillar 3 Direct Mapping Check
+            const rawRelationships = Math.min(10, Math.max(0, parseFloat(document.getElementById('inputRelationships').value) || 0));
+            document.getElementById('lblRelScore').textContent = `${rawRelationships.toFixed(1)} / 10`;
+
+            // Pillar 4A History Scaling Conversion
+            const rawHistoryCount = parseInt(document.getElementById('inputHistory').value) || 0;
+            let histScore = 4.0;
+            if (rawHistoryCount >= 20) histScore = 10.0;
+            else if (rawHistoryCount >= 10) histScore = 8.0;
+            else if (rawHistoryCount >= 5)  histScore = 6.0;
+            document.getElementById('lblHistScore').textContent = `${histScore.toFixed(0)} / 10 Profile`;
+
+            // Pillar 4B Target Scopes Conversion
+            const checkedScopesCount = document.querySelectorAll('.scope-item:checked').length;
+            let scopeScore = 4.0;
+            if (checkedScopesCount >= 6) scopeScore = 8.0;
+            else if (checkedScopesCount >= 3) scopeScore = 6.0;
+
+            // --- ENFORCE EXACT LINEAR COEFFICIENTS AGGREGATION MODEL ---
+            let s = (0.40 * areaScore10) + (0.40 * rawRelationships) + (0.07 * compScore) + (0.07 * histScore) + (0.06 * scopeScore);
+
+            // Output Formula Coefficients Metrics UI Displays
+            document.getElementById('cfGeo').textContent = `${(0.40 * areaScore10).toFixed(2)} [Base: ${areaScore10}]`;
+            document.getElementById('cfRel').textContent = `${(0.40 * rawRelationships).toFixed(2)} [Base: ${rawRelationships.toFixed(1)}]`;
+            document.getElementById('cfComp').textContent = `${(0.07 * compScore).toFixed(2)} [Base: ${compScore}]`;
+            document.getElementById('cfHist').textContent = `${(0.07 * histScore).toFixed(2)} [Base: ${histScore}]`;
+            document.getElementById('cfScope').textContent = `${(0.06 * scopeScore).toFixed(2)} [Base: ${scopeScore}]`;
+            document.getElementById('cfTotal').textContent = `${s.toFixed(2)} / 10`;
+
+            // Map System Index Target to final Probability Threshold Bands
+            let winRatePercent = 5.0;
+            let tierTextString = "Tier 4: Competitive Board Volatility Constraints";
+            if (s >= 8.0) { winRatePercent = 20.0; tierTextString = "Tier 1: Premium Alpha Negotiated Engine Pipeline"; }
+            else if (s >= 6.5) { winRatePercent = 15.0; tierTextString = "Tier 2: Stable Negotiated Target Profile"; }
+            else if (s >= 5.0) { winRatePercent = 10.0; tierTextString = "Tier 3: Standard Public Board Target Profile"; }
+            else if (s >= 3.5) { winRatePercent = 7.0; tierTextString = "Tier 4: Restricted Open Board Floor Limits"; }
+
+            // Document Calculations Pipeline Extensions Metrics Targets
+            const activeEstimators = Math.max(1, parseInt(document.getElementById('estimators').value) || 1);
+            const baseJobsCapacityPerEstimator = 4;
+            const aggregateMonthlyBidsCapacity = activeEstimators * baseJobsCapacityPerEstimator;
+            const calculatedAnnualBidsVolume = aggregateMonthlyBidsCapacity * 12;
+
+            const finalCalculatedWinRateFraction = winRatePercent / 100.0;
+            const expectedAnnualWinsCount = Math.round(calculatedAnnualBidsVolume * finalCalculatedWinRateFraction);
+            
+            const sweetSpotAvgJobSizeValue = parseFloat(document.getElementById('avgJobSize').value) || 0;
+            const expectedAnnualRevenueProjection = expectedAnnualWinsCount * sweetSpotAvgJobSizeValue;
+
+            // Render Metrics Variables UI Blocks
+            document.getElementById('valWinRate').textContent = `${winRatePercent.toFixed(2)}%`;
+            document.getElementById('valTier').textContent = tierTextString;
+            document.getElementById('valExpectedWins').textContent = expectedAnnualWinsCount;
+            document.getElementById('valExpectedRev').textContent = `$${expectedAnnualRevenueProjection.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits:2})}`;
+            document.getElementById('valTargetArea').textContent = targetAreaString;
+
+            // Months to First Job calculation match execution sequence rules
+            let operationalBaseDelay = 0;
+            if (rawRelationships <= 0) operationalBaseDelay = 3.0;
+            else if (rawRelationships <= 3) operationalBaseDelay = 2.0;
+            else if (rawRelationships <= 5) operationalBaseDelay = 1.0;
+
+            const dynamicEstimatorsScaleFactorModifier = Math.max(0.5, 1.0 / activeEstimators);
+            let computedMonthsToFirstJobRunwayValue = operationalBaseDelay + (3.0 / (expectedAnnualWinsCount + 1)) * dynamicEstimatorsScaleFactorModifier;
+            computedMonthsToFirstJobRunwayValue = Math.min(6.0, Math.max(0.5, Math.round(computedMonthsToFirstJobRunwayValue * 10) / 10));
+            document.getElementById('valMonthsToFirst').textContent = `${computedMonthsToFirstJobRunwayValue.toFixed(2)} Months`;
+
+            // Render Dynamic Structural Strategy Text Outputs blocks
+            document.getElementById('stratAreaText').textContent = activePer1k >= 25 
+                ? "🏆 Expansion Zone: Exceptionally strong development indicators. Maximum density environment. Capacity modeling suggests continuous bid scaling applies directly."
+                : activePer1k >= 15 ? "⚖️ Fair Saturated Zone: Stable environment. Execute defensive structural bids. Maintain target alignment profiles across a strict 6-month tracking window."
+                : "🛑 Restricted Market Danger: Local starts compression detected. Deploy immediate outer radius tactical parameters matching a 100-mile equipment mobilization boundary loop.";
+
+            document.getElementById('stratRelationshipText').textContent = rawRelationships <= 3.0
+                ? "Focus operational parameters strictly on programmatic public pipeline procurement. Split allocations: 50% public board submissions / 50% outer baseline market relationship targeting patterns."
+                : "Leverage advanced profile matching options to negotiate targeted private packages directly with core established GC channels to bypass standard competitive bidding.";
+
+            // Execute dependent components pipelines modules rendering matrices
+            generateBiddingMatrixPlanTable(aggregateMonthlyBidsCapacity, rawRelationships, activePer1k);
+            generateProjectTypeSufficiencyMatrix();
+        }
+
+        // Generate Dynamic Month-over-Month 12 Month work layout spreadsheet representation components
+        function generateBiddingMatrixPlanTable(monthlyMaxCapacity, baseRelationshipScore, finalComputedPer1KScore) {
+            const tableElement = document.getElementById('biddingPlanTable');
+            tableElement.innerHTML = "";
+
+            const rawDateStringValue = document.getElementById('startDate').value || "2026-02-11";
+            let activeRunningDateCursor = new Date(rawDateStringValue + 'T00:00:00');
+
+            // Construct Header Structure Row
+            let tHeader = `<thead class="bg-slate-900 text-slate-400 border-b border-slate-850 font-semibold text-[11px] uppercase tracking-wider"><tr><th class="p-3">Category Metric Split</th><th class="p-3">Channel</th>`;
+            const headerMonthObjectsArray = [];
+
+            for(let m = 0; m < 12; m++) {
+                let dynamicLabel = activeRunningDateCursor.toLocaleDateString('en-US', { month: 'short', year: 'numeric' });
+                headerMonthObjectsArray.push(new Date(activeRunningDateCursor));
+                tHeader += `<th class="p-3 font-mono">${dynamicLabel}</th>`;
+                activeRunningDateCursor.setMonth(activeRunningDateCursor.getMonth() + 1);
+            }
+            tHeader += `</tr></thead>`;
+
+            // Loop and compile rows matching distributions functions configurations
+            let tBody = `<tbody class="divide-y divide-slate-900/60 font-medium">`;
+            
+            // Local tracking matrices allocations caches arrays
+            const monthlyPublicAggregatesCache = Array(12).fill(0);
+            const monthlyPrivateRepeatAggregatesCache = Array(12).fill(0);
+            const monthlyPrivateNewAggregatesCache = Array(12).fill(0);
+            const monthlyProjectedRelScoresCache = Array(12).fill(0);
+
+            // Track dynamic relationship growth scaling indexing factors across months limits variables loops
+            let calculatedRunningRelationshipGrowthScoreState = baseRelationshipScore;
+            
+            // Build dynamic arrays values matching distributions tables equations rules
+            for(let m = 0; m < 12; m++) {
+                if(finalComputedPer1KScore >= 25) calculatedRunningRelationshipGrowthScoreState += 0.3;
+                else if (finalComputedPer1KScore >= 15) calculatedRunningRelationshipGrowthScoreState += 0.2;
+                else if (finalComputedPer1KScore >= 5) calculatedRunningRelationshipGrowthScoreState += 0.1;
+                
+                monthlyProjectedRelScoresCache[m] = Math.min(10, calculatedRunningRelationshipGrowthScoreState);
+            }
+
+            // Map Category Allocations matching Google Sheets Layout Output variables structures parameters
+            const categoryOverageViolationsTrackingOutputCacheArray = Array(12).fill("");
+
+            categoriesMapping.forEach(cat => {
+                let rowMarkup = `<tr class="hover:bg-slate-900/40 transition-colors"><td class="p-3 font-bold text-slate-300 text-[11px]">${cat.name}</td><td class="p-3 uppercase text-[10px] tracking-wider font-bold ${cat.channel === 'public' ? 'text-cyan-500' : 'text-purple-400'}">${cat.channel}</td>`;
+                
+                for(let m = 0; m < 12; m++) {
+                    let currentMonthRelScore = monthlyProjectedRelScoresCache[m];
+                    
+                    // Relationship indexing classification matching index algorithm rules splits thresholds
+                    let splitRatioPublic = 0.50, splitRatioRepeat = 0.20, splitRatioNewGC = 0.30;
+                    if (currentMonthRelScore <= 2.0) { splitRatioPublic = 0.70; splitRatioRepeat = 0.05; splitRatioNewGC = 0.25; }
+                    else if (currentMonthRelScore <= 4.0) { splitRatioPublic = 0.50; splitRatioRepeat = 0.20; splitRatioNewGC = 0.30; }
+                    else if (currentMonthRelScore <= 6.0) { splitRatioPublic = 0.35; splitRatioRepeat = 0.40; splitRatioNewGC = 0.25; }
+                    else { splitRatioPublic = 0.15; splitRatioRepeat = 0.65; splitRatioNewGC = 0.20; }
+
+                    // Apply internal allocations mapping formulas ratios distributions arrays configurations parameters 
+                    let calculatedAllocatedMonthlyTargetJobCountValue = 0;
+                    if(cat.ratio > 0.0) {
+                        // Apply allocation distributions mapping match
+                        let targetedChannelMaxPoolCount = Math.round(monthlyMaxCapacity * (cat.channel === 'public' ? splitRatioPublic : (splitRatioRepeat + splitRatioNewGC)));
+                        calculatedAllocatedMonthlyTargetJobCountValue = Math.round(targetedChannelMaxPoolCount * cat.ratio);
+                        if (calculatedAllocatedMonthlyTargetJobCountValue === 0 && cat.ratio >= 0.15) calculatedAllocatedMonthlyTargetJobCountValue = 1; 
+                    }
+
+                    // Append matrix cache values track loops metrics records
+                    if(cat.channel === 'public') {
+                        monthlyPublicAggregatesCache[m] += calculatedAllocatedMonthlyTargetJobCountValue;
+                    } else {
+                        monthlyPrivateRepeatAggregatesCache[m] += Math.round(calculatedAllocatedMonthlyTargetJobCountValue * (splitRatioRepeat / (splitRatioRepeat + splitRatioNewGC || 1)));
+                        monthlyPrivateNewAggregatesCache[m] += Math.round(calculatedAllocatedMonthlyTargetJobCountValue * (splitRatioNewGC / (splitRatioRepeat + splitRatioNewGC || 1)));
+                    }
+
+                    // Evaluate Capacity Overages Warnings matching exact JPI equation metrics limits formulas:
+                    // JPI = Population Base Coefficient * (Housing Starts Metric Ratio / 10). Let's use baseline 500k scale for population baseline.
+                    let standardSyntheticMarketJPICapThresholdValue = Math.round(500000 * (finalComputedPer1KScore / 10.0)) * cat.baseJPIFraction / 120000;
+                    if(calculatedAllocatedMonthlyTargetJobCountValue > (standardSyntheticMarketJPICapThresholdValue + 0.5)) {
+                        categoryOverageViolationsTrackingOutputCacheArray[m] += (categoryOverageViolationsTrackingOutputCacheArray[m] ? " | " : "") + `⚠️ ${cat.name} > cap`;
+                    }
+
+                    rowMarkup += `<td class="p-3 text-center font-mono font-bold text-slate-400">${calculatedAllocatedMonthlyTargetJobCountValue}</td>`;
+                }
+                rowMarkup += `</tr>`;
+                tBody += rowMarkup;
+            });
+
+            // Append Aggregations Summary Rows components matching target model structure sheet profiles
+            function appendSummaryRowMarkupRow(label, classStyles, dataArray) {
+                let markup = `<tr class="${classStyles} font-bold"><td class="p-3">${label}</td><td></td>`;
+                dataArray.forEach(val => { markup += `<td class="p-3 text-center font-mono">${typeof val === 'number' ? val.toFixed(1) : val}</td>`; });
+                return markup + `</tr>`;
+            }
+
+            tBody += appendSummaryRowMarkupRow("Total Public Bids Volume", "bg-slate-900/40 text-cyan-400 border-t border-slate-850", monthlyPublicAggregatesCache);
+            tBody += appendSummaryRowMarkupRow("Total Private (Repeat GCs Profile)", "bg-slate-900/40 text-purple-400", monthlyPrivateRepeatAggregatesCache);
+            tBody += appendSummaryRowMarkupRow("Total Private (New GCs Channels)", "bg-slate-900/40 text-pink-400", monthlyPrivateNewAggregatesCache);
+            tBody += appendSummaryRowMarkupRow("Projected Relationship Growth Index", "bg-slate-900/80 text-amber-500 border-b border-slate-800", monthlyProjectedRelScoresCache);
+
+            tBody += `</tbody>`;
+            tableElement.innerHTML = tHeader + tBody;
+
+            // Render Capacity warning labels panel section box headers smoothly inline
+            const warningsOutputBoxContainerElement = document.getElementById('capacityOverageBox');
+            warningsOutputBoxContainerElement.innerHTML = "";
+            
+            let accumulatedWarningLabelsStringsAggregator = "";
+            categoryOverageViolationsTrackingOutputCacheArray.forEach((warnStr, idx) => {
+                if(warnStr) {
+                    let mLabel = headerMonthObjectsArray[idx].toLocaleDateString('en-US', { month: 'short' });
+                    accumulatedWarningLabelsStringsAggregator += `<div class="text-red-400 font-medium font-mono text-[10px]"><span class="font-black underline uppercase">${mLabel}:</span> ${warnStr}</div>`;
+                }
+            });
+
+            if(accumulatedWarningLabelsStringsAggregator) {
+                warningsOutputBoxContainerElement.innerHTML = accumulatedWarningLabelsStringsAggregator;
+            } else {
+                warningsOutputBoxContainerElement.innerHTML = `<span class="text-emerald-500 font-bold font-mono text-[10px]">✅ All Monthly Structural Capacities within Target Parameter Caps</span>`;
+            }
+        }
+
+        // Sub-Module: Generate Project Classification Type Matrix & Equipment Sufficiency Evaluator Dashboard
+        function generateProjectTypeSufficiencyMatrix() {
+            const container = document.getElementById('projectSufficiencyMatrixContainer');
+            container.innerHTML = "";
+
+            categoriesMapping.forEach(cat => {
+                // Determine asset verification sufficiency checks status parameters
+                const targetRequiredAssetIDKeyString = cat.requiredAsset;
+                const isAssetPhysicallyPresentCheckedStatus = document.getElementById(targetRequiredAssetIDKeyString).checked;
+
+                // Map synthetic budget and indicator markers matching prompt structural criteria definitions
+                let scalingBudgetTextRange = "$200K – $2,000,000";
+                let checklistIndicatorsLabels = "Grease traps, Local oil separators, Minimal municipal utility tie-ins";
+                
+                if(cat.name.includes("Large")) { scalingBudgetTextRange = "$1.5M – $20M+"; checklistIndicatorsLabels = "Heavy concrete aprons, Deep complex stormwater control detention structures"; }
+                if(cat.name.includes("Residential – Medium")) { scalingBudgetTextRange = "$500K – $10M"; checklistIndicatorsLabels = "Subdivision internal road network grids, Curb & gutter spreads, Sanitary sewer lateral taps"; }
+                if(cat.name.includes("DOT")) { scalingBudgetTextRange = "$5M – $20M+"; checklistIndicatorsLabels = "State highway stationing markers alignment, Concrete bridge structural elements"; }
+
+                const cardBoxElement = document.createElement('div');
+                cardBoxElement.className = `p-4 rounded-xl border transition-all ${isAssetPhysicallyPresentCheckedStatus ? 'bg-slate-950 border-slate-850 hover:border-slate-700' : 'bg-red-950/10 border-red-900/30'}`;
+
+                cardBoxElement.innerHTML = `
+                    <div class="flex justify-between items-start gap-2">
+                        <h4 class="text-xs font-black text-slate-200 uppercase tracking-tight truncate max-w-[180px]">${cat.name}</h4>
+                        <span class="text-[9px] font-mono px-2 py-0.5 rounded font-bold uppercase tracking-wider ${isAssetPhysicallyPresentCheckedStatus ? 'bg-emerald-500/10 text-emerald-400 border border-emerald-500/20' : 'bg-red-500/10 text-red-400 border border-red-500/20'}">
+                            ${isAssetPhysicallyPresentCheckedStatus ? 'Asset Sufficient' : 'Asset Insufficient'}
+                        </span>
+                    </div>
+                    <div class="mt-2.5 space-y-1 text-[10px]">
+                        <div class="text-slate-400"><span class="text-slate-500 font-semibold">Scale Framework:</span> ${scalingBudgetTextRange}</div>
+                        <div class="text-slate-400 leading-relaxed"><span class="text-slate-500 font-semibold">Indicators:</span> ${checklistIndicatorsLabels}</div>
+                        <div class="pt-2 border-t border-slate-900 mt-2 flex justify-between items-center text-[9px] font-bold">
+                            <span class="text-slate-500 uppercase">Target Action Alignment:</span>
+                            <span class="${isAssetPhysicallyPresentCheckedStatus ? 'text-amber-400 uppercase' : 'text-red-500 uppercase font-black underline'}">
+                                ${isAssetPhysicallyPresentCheckedStatus ? '✓ Target / Proceed' : '⚠️ Avoid / Skip'}
+                            </span>
+                        </div>
+                    </div>
+                `;
+                container.appendChild(cardBoxElement);
+            });
+        }
+
+        // Initialize Calculation Engine Call on Boot
+        executeCalculationsPipeline();
+    </script>
+</body>
+</html>
